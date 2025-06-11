@@ -8,7 +8,7 @@ Notre objectif : **Construire des solutions robotiques innovantes et documentée
 
 ---
 
-## 🔧 Structure du dépôt
+## Structure du dépôt
 
 - `Electronique/` : Tests sur gyroscope, boîte noire, afficheur 7 segments
 - `Informatique/` : Programmation orientée objet, ROS2, pathfinding
@@ -18,7 +18,7 @@ Notre objectif : **Construire des solutions robotiques innovantes et documentée
 
 ---
 
-## 👥 Équipe
+## Équipe
 
 - **Nom 1** – Rôle (ex: Électronique)
 - **Nom 2** – Rôle (ex: Mécanique)
@@ -27,7 +27,7 @@ Notre objectif : **Construire des solutions robotiques innovantes et documentée
 
 ---
 
-## 📌 Objectif
+## Objectif
 
 L’objectif de ce dépôt est de documenter notre participation aux tests de présélection du TRC 2025 de manière claire, complète et professionnelle.
 
@@ -42,12 +42,10 @@ Chaque dossier contient le code source, les schémas électroniques, les modèle
 
 ---
 
-## 🔗 Liens utiles
+## Liens utiles
 
 - [Règlement général TRC 2025](lien)
 - [Guide de la compétition](lien)
 - [Documentation ROS2](https://docs.ros.org/en/humble/index.html)
 
 ---
-
-> **Mis à jour le :** [03/06/2025]
