@@ -1,4 +1,4 @@
-# 🧭 Test 1 
+# Test 1 
 # Test Input : Détection d’Orientation avec Accéléromètre & Gyroscope
 
 ---
@@ -46,9 +46,29 @@ Fonctionnement du Capteur :
 | Microcontrôleur      | Arduino UNO (ATmega328P) |
 | Capteur              | GY-521 (MPU6050)     |
 | Afficheur            | Écran LCD 16x2 + module I2C |
-| Alimentation         | Régulateur 5V (LM7805) + batteries | 
-| Câblage & support    | Breadboard, fils dupont  |
-| Composants passifs   | Résistances, condensateurs |
+| Alimentation         | Batterie de 9V | 
+| Câblage & support    | Breadboard, jumpers  |
+| Composants passifs   | Résistances 10 kΩ  |
+
+  # Role des composants
+   #  Microcontrôleur (Arduino UNO)
+Le microcontrôleur **Arduino UNO**, basé sur la puce ATmega328P, est le cœur du système. Il exécute le programme, communique avec le capteur via I2C et pilote l’écran LCD. C’est lui qui reçoit les données d’accélération et de rotation, les interprète, puis déclenche l’affichage.
+   #  Ecran LCD
+L’écran **LCD 16x2**, combiné à un module I2C, sert à afficher les informations détectées par le capteur : direction du mouvement et intensité de l’accélération. Grâce à l’interface I2C, seulement deux fils (SDA et SCL) sont nécessaires pour connecter l’écran à l’Arduino, ce qui simplifie beaucoup le câblage.
+
+   #  Breadboard
+Une **breadboard** est utilisée pour monter le circuit sans soudure. Cela permet de tester différentes configurations facilement et de modifier rapidement le câblage en cas d’erreur ou d’amélioration.
+
+   # Jumpers
+Les **jumpers** (mâle-mâle ou mâle-femelle) assurent les connexions électriques entre les broches de la carte, du capteur, du régulateur et de l’afficheur. Ils sont souples et facilitent les prototypages rapides et propres.
+  # Résistances
+Deux résistances de tirage (pull-up) de 10 kΩ sont connectées aux lignes SDA et SCL. Ces résistances assurent la stabilité du bus I2C et évitent les erreurs de communication dues aux flottements logiques sur ces lignes.
+
+  # Alimentation du système
+Le système est alimenté par une **batterie 9V** connectée directement au port **Jack** de l’Arduino UNO. Cette approche permet d'exploiter le régulateur interne de la carte, qui convertit la tension d’entrée en un 5V stable distribué à l’ensemble du montage. Ce choix offre une solution portable, autonome et simple à mettre en œuvre, sans nécessiter de régulateur externe.
+L’ensemble des composants – le capteur MPU6050, l’afficheur LCD, et l’Arduino – sont ainsi protégés contre les variations de tension. Ce type d’alimentation est particulièrement adapté aux prototypes mobiles et aux tests manuels.
+
+> ⚠️ Note : La batterie 9V doit être neuve ou bien chargée pour éviter une chute de tension pouvant entraîner des comportements erratiques sur l’écran ou les communications I2C.
 
 ---
 
@@ -78,9 +98,40 @@ Fonctionnement du Capteur :
 
 ---
 
-## 💻 Code Arduino
+## ⚙️ Fonctionnement global du système
 
-📁 Code source : [`/Code/gyroscope_affichage.ino`](../Code/gyroscope_affichage.ino)
+1. **Initialisation**
+   - Mise sous tension via une batterie 9V (port Jack Arduino UNO).
+   - Affichage d’un message de démarrage sur le LCD.
+   - Initialisation du capteur MPU6050 via le protocole I2C.
+
+2. **Calibration automatique**
+   - Lors des premières secondes, le système lit les valeurs d’accélération actuelles.
+   - Ces valeurs sont enregistrées comme référence (_offsets_) pour chaque axe.
+   - Cela permet d’annuler les biais dus à une surface inclinée ou instable.
+
+3. **Lecture et compensation**
+   - Lecture continue des données d’accélération sur les axes X, Y, Z.
+   - Soustraction des offsets de calibration pour obtenir une accélération relative.
+
+4. **Détection de direction dominante**
+   - Identification de l’axe présentant la plus forte variation.
+   - Interprétation du sens (positif/négatif) pour déterminer la direction du mouvement :
+     - Ex : `+Y` → Avant ; `−Y` → Arrière ; `+X` → Droite ; `−X` → Gauche ; `+Z` ou `−Z` → Haut/Bas
+   - Application d’un seuil pour ignorer les mouvements faibles ou parasites.
+
+5. **Affichage sur écran LCD**
+   - Mise à jour de l’affichage toutes les 250–300 ms pour garantir la lisibilité.
+   - Ligne 1 : direction détectée (`AVANT`, `GAUCHE`, etc.)
+   - Ligne 2 : intensité de l’accélération dominante (ex : `Acc: 2.38 g`)
+
+6. **Stabilisation**
+   - Délai court (`delay(300)`) entre chaque boucle pour lisser l’affichage.
+   - (Optionnel) : envoi des valeurs dans le moniteur série pour calibration ou analyse.
+
+---
+
+## 💻 Code Arduino
 
 ### Bibliothèques utilisées :
 - `Wire.h` – Communication I2C
@@ -88,10 +139,7 @@ Fonctionnement du Capteur :
 - `Adafruit_Sensor.h` – Structures et abstractions
 - `LiquidCrystal_I2C.h` – Gestion de l’écran LCD
 
-```cpp
-mpu.getAcceleration(&ax, &ay, &az);
-mpu.getRotation(&gx, &gy, &gz);
-```
+📁 Code source : [`/Code/gyroscope_affichage.ino`](../Code/gyroscope_affichage.ino)
 
 > 💡 Le code utilise des **seuils dynamiques** pour détecter la direction dominante et filtrer les variations faibles.
 
@@ -131,8 +179,8 @@ Contenu affiché :
 ## Conclusion
 
 Ce test nous a permis de :
--Appliquer nos compétences en électronique et en programmation.  
--Exploiter un capteur combinant accéléromètre et gyroscope pour détecter les mouvements et l’orientation. 
+- Appliquer nos compétences en électronique et en programmation.  
+- Exploiter un capteur combinant accéléromètre et gyroscope pour détecter les mouvements et l’orientation. 
 - Concevoir un circuit fonctionnel et interfacer un écran LCD pour afficher les mesures.  
 
 
