@@ -27,43 +27,122 @@ Nous avons conçu quatre pièces individuelles à partir de croquis 2D, en utili
 
 ### Détails des pièces
 
-| Pièce   | Matériau                 | Densité (g/mm³) | Masse obtenue | Masse attendue | Écart |
-|---------|--------------------------|------------------|----------------|------------------|--------|
-| Pièce 1 | Acier AISI 1020          | 0.0079           | —             | —               | —     |
-| Pièce 2 | Aluminium 1060           | 0.0027           | —             | —               | —     |
-| Pièce 3 | Acier AISI 1020          | 0.0079           | —             | —               | —     |
-| Pièce 4 | Aluminium 1060           | 0.0027           | —             | —               | —     |
+| Pièce   | Matériau                 | Densité (g/mm³) | Masse obtenue | 
+|---------|--------------------------|------------------|----------------|
+| Pièce 1 | Acier AISI 1020          | 0.0079           | —             |
+| Pièce 2 | Aluminium 1060           | 0.0027           | —             |
+| Pièce 3 | Acier AISI 1020          | 0.0079           | —             | 
+| Pièce 4 | Aluminium 1060           | 0.0027           | —             | 
 
 > Les masses ont été vérifiées avec l'outil de calcul intégré à SolidWorks, avec une tolérance cible de ±5 %.
 
 ---
 
-## Assemblage Mécanique
+## Assemblage de la pince mécanique
 
-Nous avons assemblé les quatre pièces pour former une **pince mécanique**, conformément aux spécifications techniques.
-
-### Contraintes d’assemblage appliquées
-
-- Alignement axial entre pièces mobiles
-- Coincidence entre surfaces de fixation
-- Blocage ou dégagement selon la position du vérin
-
-### Centre de Gravité
-
-Le centre de masse du système a été déterminé dans deux configurations :
-- **Position minimale du vérin**
-- **Position maximale du vérin**
-
-Les coordonnées ont été extraites via l’outil `Propriétés du centre de masse` de SolidWorks. Les variations ont été analysées pour évaluer la stabilité du système.
+L’assemblage de la pince mécanique a été réalisé sous *SolidWorks* à partir des composants fournis dans le fichier .zip. L’objectif était d’assembler correctement toutes les pièces en respectant les degrés de liberté nécessaires au fonctionnement de la pince, notamment son ouverture et sa fermeture via l’action du vérin.
 
 ---
 
-## Problèmes rencontrés & solutions
+### Pièces utilisées
 
-- **Tolérance de masse difficile à respecter** → Ajustement précis des cotes + vérification des matériaux attribués
-- **Contraintes d’assemblage conflictuelles** → Utilisation de l’outil de diagnostic pour identifier les erreurs
-- **Détermination du centre de gravité ambiguë** → Manipulation des outils de masse + documentation officielle SolidWorks
+- *Corps de vérin*
+- *Tige de vérin*
+- *Embout de vérin*
+- *Biellettes (gauche et droite)*
+- *Axes de biellettes*
+- *Porte-mâchoires (gauche et droite)*
+- *Mâchoires (gauche et droite)*
+- *Circlips* (éléments de verrouillage)
 
+---
+
+### Étapes principales de l’assemblage
+
+1. *Fixation de la base*  
+   Le sous-ensemble contenant le vérin (corps + tige + embout) a été inséré et *fixé* en tant que référence (composant immobile).
+
+2. *Assemblage des biellettes*  
+   Les deux biellettes ont été insérées et contraintes avec :
+   - Concentrique : pour aligner les axes de rotation avec les trous du vérin
+   - Symétrie : pour assurer un mouvement identique et opposé des deux côtés via le *plan dessus*
+
+3. *Ajout des portes-mâchoires et mâchoires*  
+   Chaque porte-mâchoire a été assemblée avec sa biellette correspondante :
+   - Concentrique : entre le trou du porte-mâchoire et la biellette
+   - Coïncidence : pour fixer la position latérale  
+   Les mâchoires ont été fixées sur les portes-mâchoires avec les mêmes types de contraintes.
+
+4. *Insertion des axes de biellettes*  
+   Les axes ont été utilisés à la place de vis, avec les contraintes :
+   - Concentrique : pour l’axe et les trous traversés
+   - Coïncidence : entre la tête de l’axe et la surface de contact
+
+5. *Placement des circlips*  
+   Les circlips ont été insérés pour verrouiller les axes mécaniquement (sans ajouter de surcontrainte inutile).
+
+---
+
+### Contraintes utilisées
+
+| Type de contrainte | Utilisation                          |
+|--------------------|---------------------------------------|
+| Concentrique     | Alignement d’axes (trous et axes)     |
+| Coïncidence      | Contact de faces planes               |
+| Symétrie         | Synchronisation des mouvements         |
+
+---
+
+## Analyse du centre de masse
+
+L’analyse du centre de masse permet de mieux comprendre l’équilibre de la pince mécanique dans différentes positions de fonctionnement. Elle a été effectuée depuis SolidWorks après la finalisation de l’assemblage.
+
+---
+
+### a) Position minimale de la tige de vérin
+
+Dans cette position, la tige du vérin est *entièrement rentrée* dans le corps, ce qui correspond à l’état *pince fermée*.
+
+*Étapes :*
+1. Fixer la *tige du vérin* dans sa position *minimale* à l’aide d’une contrainte de distance ou de coïncidence.
+2. Aller dans le menu Outils > Propriétés de masse.
+3. Noter les coordonnées du *centre de masse (X, Y, Z)*.
+
+*Coordonnées du centre de masse (en mm)* :
+  X = 0.00
+  Y = 0.00
+  Z = 0.00
+
+### b) Position maximale de la tige de vérin
+
+La tige est *complètement sortie, ce qui correspond à l’état **pince ouverte*.
+
+*Étapes :*
+1. Déplacer la tige du vérin jusqu’à sa *position maximale*.
+2. Appliquer la nouvelle *contrainte de position* (sans surcontraindre).
+3. Aller de nouveau dans Outils > Propriétés de masse.
+4. Noter les nouvelles coordonnées.
+
+*📊 Coordonnées du centre de masse (en mm)* :
+
+  X = 0.00
+  Y = 0.00
+  Z = 0.00
+
+---
+### Problèmes rencontrés et solutions
+Pendant l’assemblage de la pince mécanique, plusieurs problèmes techniques ont été rencontrés. Voici les principaux avec les solutions apportées :
+
+| Problème                                                                 | Cause probable                                                                 | Solution apportée                                                                 |
+|--------------------------------------------------------------------------|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| *Surcontrainte* de certaines pièces                                 | Application excessive ou contradictoire de contraintes                        | Suppression des contraintes redondantes et vérification du degré de liberté     |
+| *Erreur lors de l’application de contraintes de symétrie*           | Sélection incorrecte des faces ou mauvais plan de référence                   | Réapplication en sélectionnant correctement les deux faces et le *plan dessus* |
+| *Mouvement bloqué de la pince*                                      | Trop de pièces fixées ou contraintes figées                                   | Reprise des contraintes essentielles uniquement (coïncidence et concentrique)    |
+| *Circlips empêchant le mouvement*                                   | Circlips appliqués avec trop de contraintes (coïncidence et concentrique)     | N’ajouter qu’une seule contrainte (ex. concentrique) pour éviter le blocage      |
+| *Difficulté à fixer le bon composant de base*                       | Mauvaise pièce fixée au début                                                 | Fixation du sous-assemblage vérin (corps + tige + embout) comme base             |
+| *Les deux biellettes bougeaient indépendamment*                     | Contraintes insuffisantes ou symétrie absente                                 | Ajout de la contrainte symétrie entre les deux faces via le *plan dessus*    |
+| *Déplacement incorrect de la tige de vérin*                         | Contraintes contradictoires ou manquantes                                     | Réglage de la distance entre la tige et le corps du vérin avec précision         |
+| *Centre de masse incohérent*                                        | Mauvaise configuration de la position du vérin ou assemblage incomplet        | Vérification et verrouillage de la position du vérin avant calcul                |
 ---
 
 ## Outils et ressources
