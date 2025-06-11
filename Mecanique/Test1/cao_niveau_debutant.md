@@ -75,6 +75,26 @@ Les coordonnées ont été extraites via l’outil `Propriétés du centre de ma
 
 ---
 
+## Ressources graphiques & fichiers SolidWorks
+
+Les croquis techniques 2D et les modèles 3D réalisés dans SolidWorks sont disponibles pour consultation et vérification.
+
+Dossiers recommandés à créer :
+- `/Images/` → Captures d’écran des croquis, vues 3D, assemblages (format `.png` ou `.jpg`)
+- `/SolidWorks/` → Fichiers sources SolidWorks :
+  - Pièces individuelles (`*.sldprt`)
+  - Assemblage complet (`*.sldasm`)
+  - Plan technique ou mise en plan (`*.slddrw`, si fourni)
+
+Voici quelques exemples à inclure :
+- Vue isométrique de chaque pièce modélisée
+- Capture du croquis 2D côté
+- Vue assemblée de la pince
+- Aperçu du centre de gravité (outil “Propriétés de masse” actif)
+
+> Ces éléments visuels facilitent la lecture technique du projet et servent de preuve de modélisation dans le cadre du TRC2K25.
+---
+
 ## Conclusion
 
 Ce test a permis de valider notre capacité à :
