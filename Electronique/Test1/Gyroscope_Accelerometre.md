@@ -185,3 +185,15 @@ Ce test nous a permis de :
 
 
 ---
+## 📚 Ressources
+
+- [Datasheet MPU6050](https://invensense.tdk.com/products/motion-tracking/6-axis/mpu-6050/)
+- [Documentation Arduino LCD](https://www.arduino.cc/en/Tutorial/HelloWorld)
+
+---
+
+## 👥 Membres contributeurs
+
+- **TCHIDEHOU Dodji Virgile** 
+- **ADAHE Christelle** 
+- **HOUNNOUVI Hermes** 
