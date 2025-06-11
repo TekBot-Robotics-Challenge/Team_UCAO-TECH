@@ -1,8 +1,24 @@
 # Gyroscope et Accéléromètre
 
-## 🎯 Objectif
+## 🎯 Objectifdu Test
+L’objectif est d’identifier et exploiter un capteur combinant accéléromètre et gyroscope, fonctionnant via communication I2C, afin d’afficher l’orientation et l’accélération de la main sur un écran LCD.
+## . Présentation du Test
+Un capteur est un dispositif électronique conçu pour convertir des grandeurs physiques ou environnementales (mouvement, température, pression, etc.) en signaux électriques exploitables.  Parmi la diversité de capteurs disponibles, ce test se concentre sur l’accéléromètre et le gyroscope, des composants clés en robotique et en navigation autonome. Ces capteurs permettent aux robots de s’orienter et d’interagi avec leur environnement en temps réel, à l’image du sens de l’équilibre et de la proprioception chez l’humain.
+# Accéléromètre
+L’accéléromètre mesure l’accélération linéaire sur un ou plusieurs axes (X, Y, Z), détectant ainsi les variations de vitesse et de position d’un objet.  
+# Rôles de l’accéléromètre :
+-Détecter les mouvements (avancée, recul, inclinaison).  
+- Corriger la trajectoire(montée, descente).  
+- Reconnaître une chute ou un choc pour la sécurité d’un système.  
+## Gyroscope
+Le gyroscope mesure la vitesse angulaire, c’est-à-dire le taux de rotation d’un objet autour de ses axes.
 
-Utiliser un capteur gyroscope + accéléromètre pour détecter l’orientation et la vitesse de mouvement d’un objet dans l’espace, et afficher ces données sur un écran LCD.
+# Rôles du gyroscope :
+- Suivre l’orientation de l’objet.  
+- Stabiliser les mouvements.  
+- Améliorer la précision de navigation pour les applications robotiques 
+
+
 
 ---
 
