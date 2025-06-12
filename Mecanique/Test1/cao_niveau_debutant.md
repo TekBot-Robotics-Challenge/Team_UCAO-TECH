@@ -149,12 +149,12 @@ Pendant l’assemblage de la pince mécanique, plusieurs problèmes techniques o
 
 Les croquis techniques 2D et les modèles 3D réalisés dans SolidWorks sont disponibles pour consultation et vérification.
 
-## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png) ![Schéma MPU6050](kicad/schema_mpu6050.png)
-## Pièce 2 : ![Schéma MPU6050](kicad/schema_mpu6050.png) ![Schéma MPU6050](kicad/schema_mpu6050.png)
-## Pièce 3 : ![Schéma MPU6050](kicad/schema_mpu6050.png) ![Schéma MPU6050](kicad/schema_mpu6050.png)
-## Pièce 4 : ![Schéma MPU6050](kicad/schema_mpu6050.png) ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Pièce 1 : ![Pièce 1 en 2D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce1_2D.PNG)),  ![Pièce en 3D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce1_3D.PNG))
+## Pièce 2 : ![Pièce 2 en 2D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce2_2D3.PNG)),  ![Pièce 2 en 3D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce2_3D.PNG))
+## Pièce 3 : ![Pièce 3 en 2D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce3_2D1.PNG)),  ![Pièce 3 en 3D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce3_3D.PNG))
+## Pièce 4 : ![Pièce 4 en 2D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce4_2D2.PNG)),  ![Pièce 4 en 3D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce44_3D.PNG))
 
-## Assemblage : ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Assemblage : ![Assemblage]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Assemblage.PNG))
 
 
 Fichiers sources SolidWorks 2025 :
