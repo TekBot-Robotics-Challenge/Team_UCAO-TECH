@@ -173,7 +173,7 @@ Contenu affiché :
 - Mouvements simples dans 6 directions de référence (XYZ)
 - L’écran change dynamiquement selon la direction et amplitude
 **Vidéo de démonstration**
-  [Vidéo](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Electronique/Test1/Video/testVideo.mp4),
+  [Vidéo](https://youtu.be/27L5mn_YXMU),
   [Vidéo](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Electronique/Test1/Video/Videotestmp4.mp4),
 
 
