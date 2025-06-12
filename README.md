@@ -1,4 +1,4 @@
-# TRC 2025 – Équipe [UCAOTECH]
+# TRC 2025 – Équipe UCAO-TECH
 
 Bienvenue dans le dépôt officiel de notre équipe pour la **Tekbot Robotics Challenge 2025** !
 
