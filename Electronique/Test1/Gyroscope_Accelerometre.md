@@ -56,7 +56,7 @@ Fonctionnement du Capteur :
   # Role des composants
    #  Microcontrôleur (Arduino UNO)
 Le microcontrôleur **Arduino UNO**, basé sur la puce ATmega328P, est le cœur du système. Il exécute le programme, communique avec le capteur via I2C et pilote l’écran LCD. C’est lui qui reçoit les données d’accélération et de rotation, les interprète, puis déclenche l’affichage.
-![Carte Arduino UNO](Images/schema_montage.png)
+![Carte Arduino UNO](Images/ArduinoUNO.png)
    #  Ecran LCD
 L’écran **LCD 16x2**, combiné à un module I2C, sert à afficher les informations détectées par le capteur : direction du mouvement et intensité de l’accélération. Grâce à l’interface I2C, seulement deux fils (SDA et SCL) sont nécessaires pour connecter l’écran à l’Arduino, ce qui simplifie beaucoup le câblage.
 
@@ -86,9 +86,9 @@ L’ensemble des composants – le capteur MPU6050, l’afficheur LCD, et l’Ar
 
 ## Schéma électronique
 
-📎 Fichier KICAD : [`/Kicad/schema_test1.kicad_sch`](../Kicad/schema_test1.kicad_sch)  
+📎 Fichier KICAD : [📥 Télécharger le schéma KiCad](KICAD/test1_circuit.kicad_sch)  
 📸 Image du schéma :  
-![Schéma du montage](../Images/ArduinoUNO.png)
+![Schéma du montage](Images/Cap_circuit.png)
 
 **Description** :
 - **SDA :** A4 / **SCL :** A5 (bus I2C)
