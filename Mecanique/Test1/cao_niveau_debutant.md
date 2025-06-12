@@ -109,9 +109,9 @@ Dans cette position, la tige du vérin est *entièrement rentrée* dans le corps
 3. Noter les coordonnées du *centre de masse (X, Y, Z)*.
 
 *Coordonnées du centre de masse (en mm)* :
-  X = -29.15
-	Y = 0.16
-	Z = 19.93
+  ## X = -29.15
+  ## Y = 0.16
+  ## Z = 19.93
 
 ### b) Position maximale de la tige de vérin
 
@@ -125,9 +125,9 @@ La tige est *complètement sortie, ce qui correspond à l’état **pince ouvert
 
 * Coordonnées du centre de masse (en mm)* :
 
-  X = -25.78
-	Y = 0.06
-	Z = 19.93
+ ## X = -25.78
+ ## Y = 0.06
+ ## Z = 19.93
 
 ---
 ### Problèmes rencontrés et solutions
@@ -145,31 +145,25 @@ Pendant l’assemblage de la pince mécanique, plusieurs problèmes techniques o
 | *Centre de masse incohérent*                                        | Mauvaise configuration de la position du vérin ou assemblage incomplet        | Vérification et verrouillage de la position du vérin avant calcul                |
 ---
 
-## Outils et ressources
-
-- **Logiciel** : SolidWorks 2021 ou version ultérieure
-- **Fonctions utilisées** : Croquis 2D, extrusion, symétrie, assemblage
-- **Mesures** : Masse, centre de gravité, propriétés physiques
-- **Tutoriels** : Manuels SolidWorks, ressources vidéos
-
----
-
 ## Ressources graphiques & fichiers SolidWorks
 
 Les croquis techniques 2D et les modèles 3D réalisés dans SolidWorks sont disponibles pour consultation et vérification.
 
-Dossiers recommandés à créer :
+## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
+
+## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
 - `/Images/` → Captures d’écran des croquis, vues 3D, assemblages (format `.png` ou `.jpg`)
 - `/SolidWorks/` → Fichiers sources SolidWorks :
   - Pièces individuelles (`*.sldprt`)
   - Assemblage complet (`*.sldasm`)
   - Plan technique ou mise en plan (`*.slddrw`, si fourni)
 
-Voici quelques exemples à inclure :
-- Vue isométrique de chaque pièce modélisée
-- Capture du croquis 2D côté
-- Vue assemblée de la pince
-- Aperçu du centre de gravité (outil “Propriétés de masse” actif)
 
 > Ces éléments visuels facilitent la lecture technique du projet et servent de preuve de modélisation dans le cadre du TRC2K25.
 ---
