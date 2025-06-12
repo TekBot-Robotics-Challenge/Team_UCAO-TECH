@@ -55,7 +55,7 @@ Ce projet vise à démontrer les principes de la programmation orientée objet �
 
 ## Diagramme UML
 
-_(Insérer une image du diagramme UML ici)_
+![Diagramme UML](Test1/UML.png)
 
 Ce diagramme présente :
 - les relations d’héritage (flèches),
