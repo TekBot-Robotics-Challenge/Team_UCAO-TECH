@@ -155,9 +155,7 @@ L’ensemble du montage est optimisé pour la lisibilité, la stabilité de comm
 - `Adafruit_Sensor.h` – Structures et abstractions
 - `LiquidCrystal_I2C.h` – Gestion de l’écran LCD
 
-Code source : [`/Code/gyroscope_affichage.ino`](../Code/gyroscope_affichage.ino)
-
->  Le code utilise des **seuils dynamiques** pour détecter la direction dominante et filtrer les variations faibles.
+Code source : [`/Code/gyroscope_affichage.ino`](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Electronique/Test1/Code/test1_input.ino)
 
 ---
 
@@ -174,7 +172,9 @@ Contenu affiché :
 - Capteur tenu dans la paume de main à l’horizontale
 - Mouvements simples dans 6 directions de référence (XYZ)
 - L’écran change dynamiquement selon la direction et amplitude
-- Ajout recommandé : **vidéo de démonstration** pour validation visuelle
+**Vidéo de démonstration**
+  📽️ [Vidéo](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Electronique/Test1/Video/testVideo.mp4),
+
 
 ---
 
