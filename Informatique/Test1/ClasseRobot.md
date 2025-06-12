@@ -32,7 +32,7 @@ Ce projet vise à démontrer les principes de la programmation orientée objet �
 - **Diagramme UML** : Visual Paradigm  
 - **Structure** : Projet modulaire avec séparation en `.h` / `.cpp`
      ## Organisation des fichiers
-      Test1/
+      Test1/ClassRobot/
           ├── include/              # Fichiers d’en-tête (.h)
           ├── src/                  # Fichiers source (.cpp)
           ├── diagram/              # Diagrammes UML 
