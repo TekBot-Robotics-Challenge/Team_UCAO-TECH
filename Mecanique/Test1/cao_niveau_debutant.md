@@ -29,10 +29,10 @@ Nous avons conçu quatre pièces individuelles à partir de croquis 2D, en utili
 
 | Pièce   | Matériau                 | Densité (g/mm³) | Masse obtenue | 
 |---------|--------------------------|------------------|----------------|
-| Pièce 1 | Acier AISI 1020          | 0.0079           | 2850 g            |
-| Pièce 2 | Aluminium 1060           | 0.0027           | 280 g           |
-| Pièce 3 | Acier AISI 1020          | 0.0079           | 1630 g            | 
-| Pièce 4 | Aluminium 1060           | 0.0027           | 297 g            | 
+| Pièce 1 | Acier AISI 1020          | 0.0079           | 2850.16 g            |
+| Pièce 2 | Aluminium 1060           | 0.0027           |  279.77 g           |
+| Pièce 3 | Acier AISI 1020          | 0.0079           |  1633.25  g            | 
+| Pièce 4 | Aluminium 1060           | 0.0027           |  297.29 g            | 
 
 ---
 
