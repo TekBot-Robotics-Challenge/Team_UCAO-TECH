@@ -159,12 +159,12 @@ Les croquis techniques 2D et les modèles 3D réalisés dans SolidWorks sont dis
 
 Fichiers sources SolidWorks 2025 :
   - Pièces individuelles
-     [Pièce 1][(Test1/Images/)](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/SolidWorks/Pi%C3%A8ce2.SLDPRT) 
-     [Pièce 2](kicad/schéma_gyro.kicad_sch)
-    [Pièce 3](kicad/schéma_gyro.kicad_sch)
-    [Pièce 4](kicad/schéma_gyro.kicad_sch)
+     [Pièce 1](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/SolidWorks/Pi%C3%A8ce_1.SLDPRT),
+    [Pièce 2](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/SolidWorks/Pi%C3%A8ce2.SLDPRT),
+    [Pièce 3](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/SolidWorks/Pi%C3%A8ce3.SLDPRT),
+    [Pièce 4](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/SolidWorks/Pi%C3%A8ce4.SLDPRT),
   - Assemblage complet (`*.sldasm`)
-    [Assamblage](kicad/schéma_gyro.kicad_sch)
+    [Assamblage](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/SolidWorks/assemblage%20pince.SLDASM),
 
 
 > Ces éléments visuels facilitent la lecture technique du projet et servent de preuve de modélisation dans le cadre du TRC2K25.
