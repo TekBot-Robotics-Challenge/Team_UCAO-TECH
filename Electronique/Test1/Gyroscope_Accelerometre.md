@@ -32,7 +32,9 @@ Rôles du gyroscope :
 ### Identification du capteur
 
 Nous avons sélectionné le module GY-521, basé sur le capteur MPU6050, qui intègre un accéléromètre et un gyroscope dans un seul composant. Ce capteur permet de déterminer précisément l’orientation spatiale et les mouvements tout en offrant une interface simplifiée pour les microcontrôleurs.
-(../Images/schema_montage.png)
+
+![Capteur GY-521](Images/GY-521.png)
+
 Fonctionnement du Capteur :
 - Accéléromètre : Mesure l’accélération sur les trois axes (X, Y, Z) en m/s² ou en g. La mesure combine l’accélération due au mouvement et l’accélération gravitationnelle.  
 - Gyroscope: Mesure la vitesse angulaire sur les trois axes en °/s, permettant de déterminer la vitesse et la direction de rotation.  
@@ -54,19 +56,28 @@ Fonctionnement du Capteur :
   # Role des composants
    #  Microcontrôleur (Arduino UNO)
 Le microcontrôleur **Arduino UNO**, basé sur la puce ATmega328P, est le cœur du système. Il exécute le programme, communique avec le capteur via I2C et pilote l’écran LCD. C’est lui qui reçoit les données d’accélération et de rotation, les interprète, puis déclenche l’affichage.
+![Carte Arduino UNO](Images/schema_montage.png)
    #  Ecran LCD
 L’écran **LCD 16x2**, combiné à un module I2C, sert à afficher les informations détectées par le capteur : direction du mouvement et intensité de l’accélération. Grâce à l’interface I2C, seulement deux fils (SDA et SCL) sont nécessaires pour connecter l’écran à l’Arduino, ce qui simplifie beaucoup le câblage.
+
+![Ecran LCD 16x2](Images/Lcd 16x2.png)
 
    #  Breadboard
 Une **breadboard** est utilisée pour monter le circuit sans soudure. Cela permet de tester différentes configurations facilement et de modifier rapidement le câblage en cas d’erreur ou d’amélioration.
 
+![Breadboard](Images/breadbord.png)
+
    # Jumpers
 Les **jumpers** (mâle-mâle ou mâle-femelle) assurent les connexions électriques entre les broches de la carte, du capteur, du régulateur et de l’afficheur. Ils sont souples et facilitent les prototypages rapides et propres.
+![Jumpers](Images/Jumpers.png)
   # Résistances
 Deux résistances de tirage (pull-up) de 10 kΩ sont connectées aux lignes SDA et SCL. Ces résistances assurent la stabilité du bus I2C et évitent les erreurs de communication dues aux flottements logiques sur ces lignes.
 
   # Alimentation du système
 Le système est alimenté par une **batterie 9V** connectée directement au port **Jack** de l’Arduino UNO. Cette approche permet d'exploiter le régulateur interne de la carte, qui convertit la tension d’entrée en un 5V stable distribué à l’ensemble du montage. Ce choix offre une solution portable, autonome et simple à mettre en œuvre, sans nécessiter de régulateur externe.
+
+![Alimentation](Images/batterie.png)
+
 L’ensemble des composants – le capteur MPU6050, l’afficheur LCD, et l’Arduino – sont ainsi protégés contre les variations de tension. Ce type d’alimentation est particulièrement adapté aux prototypes mobiles et aux tests manuels.
 
 > ⚠️ Note : La batterie 9V doit être neuve ou bien chargée pour éviter une chute de tension pouvant entraîner des comportements erratiques sur l’écran ou les communications I2C.
