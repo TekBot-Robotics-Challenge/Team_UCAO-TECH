@@ -86,7 +86,7 @@ L’ensemble des composants – le capteur MPU6050, l’afficheur LCD, et l’Ar
 
 ## Schéma électronique
 
-📎 Fichier KICAD : ![ Télécharger le schéma KiCad](KICAD/test1_circuit.kicad_sch)  
+Fichier KICAD : ![ Télécharger le schéma KiCad](KICAD/test1_circuit.kicad_sch)  
 Image du schéma :  
 ![Schéma du montage](Images/Cap_Circuit.PNG)
 
@@ -147,7 +147,7 @@ L’ensemble du montage est optimisé pour la lisibilité, la stabilité de comm
 
 ---
 
-## 💻 Code Arduino
+## Code Arduino
 
 ### Bibliothèques utilisées :
 - `Wire.h` – Communication I2C
@@ -155,11 +155,11 @@ L’ensemble du montage est optimisé pour la lisibilité, la stabilité de comm
 - `Adafruit_Sensor.h` – Structures et abstractions
 - `LiquidCrystal_I2C.h` – Gestion de l’écran LCD
 
-Code source : [`/Code/gyroscope_affichage.ino`](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Electronique/Test1/Code/test1_input.ino)
+Code source :(https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Electronique/Test1/Code/test1_input.ino),
 
 ---
 
-## 🖥️ Affichage LCD
+## Affichage LCD
 
 Contenu affiché :
 - Ligne 1 : Direction détectée (_ex : AVANT, GAUCHE, HAUT…_)
@@ -173,12 +173,12 @@ Contenu affiché :
 - Mouvements simples dans 6 directions de référence (XYZ)
 - L’écran change dynamiquement selon la direction et amplitude
 **Vidéo de démonstration**
-  📽️ [Vidéo](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Electronique/Test1/Video/testVideo.mp4),
+  [Vidéo](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Electronique/Test1/Video/testVideo.mp4),
 
 
 ---
 
-## 🔍 Problèmes rencontrés et solutions
+## Problèmes rencontrés et solutions
 
 | Problème identifié              | Solution appliquée                                                  |
 |-------------------------------|----------------------------------------------------------------------|
@@ -198,15 +198,8 @@ Ce test nous a permis de :
 
 
 ---
-## 📚 Ressources
+## Ressources
 
 - [Datasheet MPU6050](https://invensense.tdk.com/products/motion-tracking/6-axis/mpu-6050/)
 - [Documentation Arduino LCD](https://www.arduino.cc/en/Tutorial/HelloWorld)
 
----
-
-## 👥 Membres contributeurs
-
-- **TCHIDEHOU Dodji Virgile** 
-- **ADAHE Christelle** 
-- **HOUNNOUVI Hermes** 
