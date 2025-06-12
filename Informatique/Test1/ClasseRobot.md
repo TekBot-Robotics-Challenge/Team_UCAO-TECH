@@ -55,7 +55,7 @@ Ce projet vise à démontrer les principes de la programmation orientée objet �
 
 ## Diagramme UML
 
-![Diagramme UML](Test1/UML.png)
+![Diagramme UML](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Informatique/Test1/UML.png)
 
 Ce diagramme présente :
 - les relations d’héritage (flèches),
