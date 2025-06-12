@@ -1,40 +1,47 @@
-# 🤖 Test 1 – Classe de gestion d’un Robot autonome  
+# Test 1 – Classe de gestion d’un Robot autonome  
 **Tekbot Robotics Challenge 2025 — Informatique**
 
 ---
 
-## 🎯 Objectifs du test
+## Objectifs du test
 
-Ce test vise à évaluer les compétences en **programmation orientée objet** (POO) en implémentant une **architecture modulaire** pour un robot. L’objectif est de :
+Ce projet vise à démontrer les principes de la programmation orientée objet à travers la conception d’une classe Robot abstraite et de plusieurs sous-classes spécialisées. Il s’inscrit dans le cadre du Tekbot Robotics Challenge 2024. L’objectif est de :
 
 - Modéliser une **classe principale `Robot`** et au moins **deux sous-classes spécialisées**
 - Utiliser les concepts fondamentaux de la POO :  
-  👉 **Encapsulation**, **Héritage**, **Polymorphisme**, **Abstraction**
+   **Encapsulation**, **Héritage**, **Polymorphisme**, **Abstraction**
 - Implémenter et redéfinir une méthode `move()` dans les sous-classes
 - Fournir une documentation claire, incluant un **diagramme UML explicatif**
 
 ---
 
-## 🧠 Concepts abordés
+## Concepts abordés
 
 - UML et modélisation logicielle
 - Héritage et polymorphisme (`virtual`, `override`)
 - Encapsulation (attributs privés, getters/setters)
 - Composition (capteurs, navigation)
-- Utilisation de `std::vector`
+
 
 ---
 
-## 🛠️ Technologies utilisées
+## Technologies utilisées
 
 - **Langages** : C++  
-- **IDE recommandé** : VS Code, Arduino IDE ou tout éditeur C++  
-- **Diagramme UML** : Généré avec [draw.io](https://draw.io)  
+- **IDE utilisée** : Code::Blocks 
+- **Diagramme UML** : Visual Paradigm  
 - **Structure** : Projet modulaire avec séparation en `.h` / `.cpp`
+     ## Organisation des fichiers
+      Test1/
+          ├── include/              # Fichiers d’en-tête (.h)
+          ├── src/                  # Fichiers source (.cpp)
+          ├── diagram/              # Diagrammes UML 
+          ├── README.md             # Documentation du projet
+          ├── main.cpp              # Programme de test
 
 ---
 
-## 🧩 Architecture des classes
+## Architecture des classes
 
 | Classe           | Rôle                                                   | Concepts illustrés             |
 |------------------|---------------------------------------------------------|-------------------------------|
@@ -46,7 +53,7 @@ Ce test vise à évaluer les compétences en **programmation orientée objet** (
 
 ---
 
-## 📐 Diagramme UML
+## Diagramme UML
 
 _(Insérer une image du diagramme UML ici)_
 
@@ -58,32 +65,21 @@ Ce diagramme présente :
 
 ---
 
-## 📁 Arborescence du dépôt
-ClasseRobot/ ├── include/ │ ├── capteur.h │ ├── navigation.h │ ├── robot.h │ ├── robotMobile.h │ └── brasRobotique.h ├── src/ │ ├── capteur.cpp │ ├── navigation.cpp │ ├── robot.cpp │ ├── robotMobile.cpp │ └── brasRobotique.cpp ├── main.cpp ├── assets/ │ └── diagramme_UML.png ├── ClasseRobot.md └── README.md
-
-
 ---
+  ## Concepts appliqués
+**Encapsulation :** tous les attributs sont private, accessibles via getters/setters.
 
-## 📎 Exemple de redéfinition de `move()`
+**Héritage :** RobotMobile et BrasRobotique héritent de la classe Robot.
 
-```cpp
-class Robot {
-public:
-    virtual void move(double dx, double dy, double dz) = 0;
-};
+**Polymorphisme :** la méthode move() est redéfinie dans chaque sous-classe.
 
-class RobotMobile : public Robot {
-public:
-    void move(double dx, double dy, double dz) override {
-        std::cout << "RobotMobile avance de (" << dx << ", " << dy << ", " << dz << ")\n";
-    }
-};
+**Composition :** un Robot contient des objets Navigation et un vecteur de Capteur.
 
 ---
 
 ##  Références pédagogiques
 Documentation C++
-
+OpenClassrooms.com
 UML Class Diagram - Guide complet
 
 ---
