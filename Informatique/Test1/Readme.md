@@ -1,1 +1,1 @@
-#Tests de mécanique Cette section regroupe les tests mécaniques de présélection.
+#Tests de informatique Cette section regroupe le test 1 de présélection.
