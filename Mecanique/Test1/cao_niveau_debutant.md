@@ -29,12 +29,10 @@ Nous avons conçu quatre pièces individuelles à partir de croquis 2D, en utili
 
 | Pièce   | Matériau                 | Densité (g/mm³) | Masse obtenue | 
 |---------|--------------------------|------------------|----------------|
-| Pièce 1 | Acier AISI 1020          | 0.0079           | —             |
-| Pièce 2 | Aluminium 1060           | 0.0027           | —             |
-| Pièce 3 | Acier AISI 1020          | 0.0079           | —             | 
-| Pièce 4 | Aluminium 1060           | 0.0027           | —             | 
-
-> Les masses ont été vérifiées avec l'outil de calcul intégré à SolidWorks, avec une tolérance cible de ±5 %.
+| Pièce 1 | Acier AISI 1020          | 0.0079           | 2850 g            |
+| Pièce 2 | Aluminium 1060           | 0.0027           | 280 g           |
+| Pièce 3 | Acier AISI 1020          | 0.0079           | 1630 g            | 
+| Pièce 4 | Aluminium 1060           | 0.0027           | 297 g            | 
 
 ---
 
@@ -54,6 +52,8 @@ L’assemblage de la pince mécanique a été réalisé sous *SolidWorks* à par
 - *Porte-mâchoires (gauche et droite)*
 - *Mâchoires (gauche et droite)*
 - *Circlips* (éléments de verrouillage)
+- *Vis Chc M5x25*
+- *Axe porte mârchoire*
 
 ---
 
@@ -109,9 +109,9 @@ Dans cette position, la tige du vérin est *entièrement rentrée* dans le corps
 3. Noter les coordonnées du *centre de masse (X, Y, Z)*.
 
 *Coordonnées du centre de masse (en mm)* :
-  X = 0.00
-  Y = 0.00
-  Z = 0.00
+  X = -29.15
+	Y = 0.16
+	Z = 19.93
 
 ### b) Position maximale de la tige de vérin
 
@@ -123,11 +123,11 @@ La tige est *complètement sortie, ce qui correspond à l’état **pince ouvert
 3. Aller de nouveau dans Outils > Propriétés de masse.
 4. Noter les nouvelles coordonnées.
 
-*📊 Coordonnées du centre de masse (en mm)* :
+* Coordonnées du centre de masse (en mm)* :
 
-  X = 0.00
-  Y = 0.00
-  Z = 0.00
+  X = -25.78
+	Y = 0.06
+	Z = 19.93
 
 ---
 ### Problèmes rencontrés et solutions
