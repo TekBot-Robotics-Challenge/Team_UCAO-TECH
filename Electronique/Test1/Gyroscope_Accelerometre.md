@@ -88,7 +88,7 @@ L’ensemble des composants – le capteur MPU6050, l’afficheur LCD, et l’Ar
 
 📎 Fichier KICAD : ![ Télécharger le schéma KiCad](KICAD/test1_circuit.kicad_sch)  
 Image du schéma :  
-![Schéma du montage](Images/Cap_Circuit.png)
+![Schéma du montage](Images/Cap_Circuit.PNG)
 
 **Description** :
 ### Schéma électronique – Module MPU6050 (Gyroscope + Accéléromètre)
