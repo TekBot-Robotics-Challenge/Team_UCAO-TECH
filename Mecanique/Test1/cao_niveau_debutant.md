@@ -149,20 +149,22 @@ Pendant l’assemblage de la pince mécanique, plusieurs problèmes techniques o
 
 Les croquis techniques 2D et les modèles 3D réalisés dans SolidWorks sont disponibles pour consultation et vérification.
 
-## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
-## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
-## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
-## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png) ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Pièce 2 : ![Schéma MPU6050](kicad/schema_mpu6050.png) ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Pièce 3 : ![Schéma MPU6050](kicad/schema_mpu6050.png) ![Schéma MPU6050](kicad/schema_mpu6050.png)
+## Pièce 4 : ![Schéma MPU6050](kicad/schema_mpu6050.png) ![Schéma MPU6050](kicad/schema_mpu6050.png)
 
-## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
-## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
-## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
-## Pièce 1 : ![Schéma MPU6050](kicad/schema_mpu6050.png)
-- `/Images/` → Captures d’écran des croquis, vues 3D, assemblages (format `.png` ou `.jpg`)
-- `/SolidWorks/` → Fichiers sources SolidWorks :
-  - Pièces individuelles (`*.sldprt`)
+## Assemblage : ![Schéma MPU6050](kicad/schema_mpu6050.png)
+
+
+Fichiers sources SolidWorks 2025 :
+  - Pièces individuelles
+     [📥 Télécharger le schéma KiCad](kicad/schéma_gyro.kicad_sch) (`*.sldprt`)
+     [📥 Télécharger le schéma KiCad](kicad/schéma_gyro.kicad_sch)
+    [📥 Télécharger le schéma KiCad](kicad/schéma_gyro.kicad_sch)
+    [📥 Télécharger le schéma KiCad](kicad/schéma_gyro.kicad_sch)
   - Assemblage complet (`*.sldasm`)
-  - Plan technique ou mise en plan (`*.slddrw`, si fourni)
+    [📥 Télécharger le schéma KiCad](kicad/schéma_gyro.kicad_sch)
 
 
 > Ces éléments visuels facilitent la lecture technique du projet et servent de preuve de modélisation dans le cadre du TRC2K25.
