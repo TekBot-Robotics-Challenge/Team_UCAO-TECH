@@ -1,15 +1,19 @@
-# 🤖 Test 1 – Conception et implémentation orientée objet d’un robot autonome
+# 🤖 Test 1 – Classe de gestion d’un Robot autonome  
+**Tekbot Robotics Challenge 2025 — Informatique**
 
-Projet : **Tekbot Robotics Challenge 2024**  
-Filière : Génie Électrique / Informatique Industrielle  
-Année universitaire : 2024–2025
+---
 
-## 🎯 Objectifs du projet
+## 🎯 Objectifs du test
 
-- Concevoir un robot modulaire en C++ selon les principes de la programmation orientée objet.
-- Appliquer les concepts d’abstraction, d’héritage, d’encapsulation et de polymorphisme.
-- Modéliser les entités robotiques à l’aide de diagrammes UML.
-- Simuler un système capable de se déplacer, manipuler et percevoir l’environnement.
+Ce test vise à évaluer les compétences en **programmation orientée objet** (POO) en implémentant une **architecture modulaire** pour un robot. L’objectif est de :
+
+- Modéliser une **classe principale `Robot`** et au moins **deux sous-classes spécialisées**
+- Utiliser les concepts fondamentaux de la POO :  
+  👉 **Encapsulation**, **Héritage**, **Polymorphisme**, **Abstraction**
+- Implémenter et redéfinir une méthode `move()` dans les sous-classes
+- Fournir une documentation claire, incluant un **diagramme UML explicatif**
+
+---
 
 ## 🧠 Concepts abordés
 
@@ -19,63 +23,67 @@ Année universitaire : 2024–2025
 - Composition (capteurs, navigation)
 - Utilisation de `std::vector`
 
-## 🧱 Architecture orientée objet
+---
 
-| Classe           | Rôle                              | Liens OOP                 |
-|------------------|-----------------------------------|---------------------------|
-| `Robot`          | Classe abstraite principale       | Abstraction, interface    |
-| `RobotMobile`    | Déplacement au sol                | Héritage                  |
-| `BrasRobotique`  | Manipulation d’objets             | Héritage                  |
-| `Capteur`        | Représente un capteur ajouté      | Composition               |
-| `Navigation`     | Gère la position du robot         | Agrégation                |
+## 🛠️ Technologies utilisées
+
+- **Langages** : C++  
+- **IDE recommandé** : VS Code, Arduino IDE ou tout éditeur C++  
+- **Diagramme UML** : Généré avec [draw.io](https://draw.io)  
+- **Structure** : Projet modulaire avec séparation en `.h` / `.cpp`
+
+---
+
+## 🧩 Architecture des classes
+
+| Classe           | Rôle                                                   | Concepts illustrés             |
+|------------------|---------------------------------------------------------|-------------------------------|
+| `Robot`          | Classe mère abstraite. Contient les propriétés générales. | Abstraction, Polymorphisme   |
+| `RobotMobile`    | Gère les déplacements en translation (roues, direction) | Héritage, Redéfinition        |
+| `BrasRobotique`  | Contrôle un bras articulé et sa pince                   | Héritage, Encapsulation       |
+| `Capteur`        | Représente un capteur configurable (type, portée, etc.) | Composition                   |
+| `Navigation`     | Gère la position et l’orientation spatiale du robot     | Agrégation                    |
+
+---
 
 ## 📐 Diagramme UML
 
-![Diagramme UML](diagramme_UML.png)
+_(Insérer une image du diagramme UML ici)_
 
-_Légende : 🔺 héritage | 🔷 agrégation | 🔐 privé | 📥 getter/setter | 🔑 méthode virtuelle_
+Ce diagramme présente :
+- les relations d’héritage (flèches),
+- les attributs privés `-` et les méthodes publiques `+`,
+- la composition (`Robot` possède une liste de `Capteur`),
+- l’agrégation avec la classe `Navigation`.
 
-## 💻 Compilation & exécution
-
-### Compilation (g++) :
-
-```bash
-g++ -std=c++17 main.cpp robot.cpp robot_mobile.cpp bras_robotique.cpp capteur.cpp navigation.cpp -o robot_test
-Execution
-./robot_test
-Demonstration
-Robot: Explorer-1
-Position: (10.5, 5.2, 0.0)
-Capteurs actifs: 2
 ---
 
-Fonctionnalités :
+## 📁 Arborescence du dépôt
+ClasseRobot/ ├── include/ │ ├── capteur.h │ ├── navigation.h │ ├── robot.h │ ├── robotMobile.h │ └── brasRobotique.h ├── src/ │ ├── capteur.cpp │ ├── navigation.cpp │ ├── robot.cpp │ ├── robotMobile.cpp │ └── brasRobotique.cpp ├── main.cpp ├── assets/ │ └── diagramme_UML.png ├── ClasseRobot.md └── README.md
 
-Ajout dynamique de capteurs (ajouterCapteur)
 
-Redéfinition de la méthode move() selon le type de robot
+---
 
-Affichage des informations avec obtenirInfos()
+## 📎 Exemple de redéfinition de `move()`
 
-🚧 Défis rencontrés
-Traduction UML → C++ : évitement de l’héritage multiple
+```cpp
+class Robot {
+public:
+    virtual void move(double dx, double dy, double dz) = 0;
+};
 
-Encapsulation vs performance
-Mémoire : choix entre pointeurs bruts et std::vector
+class RobotMobile : public Robot {
+public:
+    void move(double dx, double dy, double dz) override {
+        std::cout << "RobotMobile avance de (" << dx << ", " << dy << ", " << dz << ")\n";
+    }
+};
 
-Mise en place d’une architecture extensible
+---
 
-✅ Perspectives d’évolution
-Interface graphique de simulation
+##  Références pédagogiques
+Documentation C++
 
-Intégration d’une IA embarquée
+UML Class Diagram - Guide complet
 
-Module de simulation physique
-
-Génération de logs via fichier .txt
-
-📎 Annexes
-diagramme_UML_vectorise.svg
-
-Captures : annexes/captures_console.png
-Fichiers source : .cpp / .h
+---
