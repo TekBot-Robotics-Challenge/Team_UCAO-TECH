@@ -14,16 +14,22 @@ Notre objectif : **Construire des solutions robotiques innovantes et documentée
 - `Informatique/` : Programmation orientée objet, ROS2, pathfinding
 - `Mecanique/` : CAO SolidWorks (débutant à avancé)
 - `Test_Final/` : Convoyeur de tri intelligent (projet final)
-- `Ressources/` : Datasheets, notes, documents utiles
+
 
 ---
 
 ## Équipe
 
-- **Nom 1** – Rôle (ex: Électronique)
-- **Nom 2** – Rôle (ex: Mécanique)
-- **Nom 3** – Rôle (ex: IT)
-- *(compléter selon les membres)*
+- **TCHIDEHOU Dodji Virgile (Chef d'équipe)** – Électronique
+- **ADAHE Christelle** – Électronique
+- **HOUNNOUVI Hermes** – Électronique
+- **AIDASSO David Jonathan** – ROS
+- **ADJAHOU Romance** – ROS
+- **DOUSSO Ladislas** – ROS
+- **ADECHI Mafaaz Adjao Aladé** – ROS
+- **SALIFOU Fatihatou** – Mécanique
+- **FAGBITE Rachelle** – Mécanique
+- **DEGUENON David** – Mécanique
 
 ---
 
