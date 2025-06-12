@@ -80,37 +80,41 @@ Le système est alimenté par une **batterie 9V** connectée directement au port
 
 L’ensemble des composants – le capteur MPU6050, l’afficheur LCD, et l’Arduino – sont ainsi protégés contre les variations de tension. Ce type d’alimentation est particulièrement adapté aux prototypes mobiles et aux tests manuels.
 
-> ⚠️ Note : La batterie 9V doit être neuve ou bien chargée pour éviter une chute de tension pouvant entraîner des comportements erratiques sur l’écran ou les communications I2C.
+> Note : La batterie 9V doit être neuve ou bien chargée pour éviter une chute de tension pouvant entraîner des comportements erratiques sur l’écran ou les communications I2C.
 
 ---
 
 ## Schéma électronique
 
-📎 Fichier KICAD : [📥 Télécharger le schéma KiCad](KICAD/test1_circuit.kicad_sch)  
-📸 Image du schéma :  
+📎 Fichier KICAD : ![ Télécharger le schéma KiCad](KICAD/test1_circuit.kicad_sch)  
+Image du schéma :  
 ![Schéma du montage](Images/Cap_circuit.png)
 
 **Description** :
-- **SDA :** A4 / **SCL :** A5 (bus I2C)
-- Le régulateur alimente l’Arduino en 5V stable
-- Condensateurs : 100nF en découplage sur VCC/GND
-- Résistances de pull-up sur SDA/SCL si nécessaire
+### Schéma électronique – Module MPU6050 (Gyroscope + Accéléromètre)
+
+Le schéma illustre un circuit où le capteur **MPU6050 (GY-521)** est connecté en **I2C** à un microcontrôleur **Arduino UNO** :
+
+- **Connexion I2C** :  
+  - `SDA` → A4  
+  - `SCL` → A5  
+  - Adresse I2C par défaut : `0x68`
+
+- **Alimentation** :  
+  - Batterie 9V → entrée Jack de l’Arduino  
+  - Régulation interne 5V → distribution aux modules
+
+- **Afficheur** :  
+  - Écran **LCD 16x2** avec module I2C connecté sur le même bus (SDA/SCL)
+
+- **Composants passifs** :  
+  - Résistances de pull-up 10kΩ sur SDA/SCL  
+
+L’ensemble du montage est optimisé pour la lisibilité, la stabilité de communication, et l’expérimentation rapide via breadboard.
 
 ---
 
-## ⚙️ Fonctionnement global
-
-1. Initialisation du capteur et de l’écran LCD dans le `setup()`
-2. Lecture des données brutes via I2C dans le `loop()`
-3. Conversion des valeurs vers un format lisible
-4. Analyse des variations pour détecter :
-   - Orientation de la main : gauche, droite, haut, bas, avant, arrière
-   - Accélération : amplitude en m/s² ou g
-5. Affichage dynamique sur l’écran LCD
-
----
-
-## ⚙️ Fonctionnement global du système
+## Fonctionnement global du système
 
 1. **Initialisation**
    - Mise sous tension via une batterie 9V (port Jack Arduino UNO).
@@ -151,16 +155,13 @@ L’ensemble des composants – le capteur MPU6050, l’afficheur LCD, et l’Ar
 - `Adafruit_Sensor.h` – Structures et abstractions
 - `LiquidCrystal_I2C.h` – Gestion de l’écran LCD
 
-📁 Code source : [`/Code/gyroscope_affichage.ino`](../Code/gyroscope_affichage.ino)
+Code source : [`/Code/gyroscope_affichage.ino`](../Code/gyroscope_affichage.ino)
 
-> 💡 Le code utilise des **seuils dynamiques** pour détecter la direction dominante et filtrer les variations faibles.
+>  Le code utilise des **seuils dynamiques** pour détecter la direction dominante et filtrer les variations faibles.
 
 ---
 
 ## 🖥️ Affichage LCD
-
-📸 Image :  
-![Affichage LCD](../Images/affichage_LCD.png)
 
 Contenu affiché :
 - Ligne 1 : Direction détectée (_ex : AVANT, GAUCHE, HAUT…_)
