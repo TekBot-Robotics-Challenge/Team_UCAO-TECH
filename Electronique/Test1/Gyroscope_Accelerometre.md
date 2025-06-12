@@ -32,6 +32,7 @@ Rôles du gyroscope :
 ### Identification du capteur
 
 Nous avons sélectionné le module GY-521, basé sur le capteur MPU6050, qui intègre un accéléromètre et un gyroscope dans un seul composant. Ce capteur permet de déterminer précisément l’orientation spatiale et les mouvements tout en offrant une interface simplifiée pour les microcontrôleurs.
+(../Images/schema_montage.png)
 Fonctionnement du Capteur :
 - Accéléromètre : Mesure l’accélération sur les trois axes (X, Y, Z) en m/s² ou en g. La mesure combine l’accélération due au mouvement et l’accélération gravitationnelle.  
 - Gyroscope: Mesure la vitesse angulaire sur les trois axes en °/s, permettant de déterminer la vitesse et la direction de rotation.  
@@ -76,7 +77,7 @@ L’ensemble des composants – le capteur MPU6050, l’afficheur LCD, et l’Ar
 
 📎 Fichier KICAD : [`/Kicad/schema_test1.kicad_sch`](../Kicad/schema_test1.kicad_sch)  
 📸 Image du schéma :  
-![Schéma du montage](../Images/schema_montage.png)
+![Schéma du montage](../Images/ArduinoUNO.png)
 
 **Description** :
 - **SDA :** A4 / **SCL :** A5 (bus I2C)
