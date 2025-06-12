@@ -47,6 +47,7 @@ Demonstration
 Robot: Explorer-1
 Position: (10.5, 5.2, 0.0)
 Capteurs actifs: 2
+---
 
 Fonctionnalités :
 
