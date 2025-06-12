@@ -149,22 +149,22 @@ Pendant l’assemblage de la pince mécanique, plusieurs problèmes techniques o
 
 Les croquis techniques 2D et les modèles 3D réalisés dans SolidWorks sont disponibles pour consultation et vérification.
 
-## Pièce 1 : ![Pièce 1 en 2D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce1_2D.PNG)),  ![Pièce en 3D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce1_3D.PNG))
-## Pièce 2 : ![Pièce 2 en 2D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce2_2D3.PNG)),  ![Pièce 2 en 3D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce2_3D.PNG))
-## Pièce 3 : ![Pièce 3 en 2D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce3_2D1.PNG)),  ![Pièce 3 en 3D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce3_3D.PNG))
-## Pièce 4 : ![Pièce 4 en 2D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce4_2D2.PNG)),  ![Pièce 4 en 3D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce44_3D.PNG))
+## Pièce 1 : ![Pièce 1 en 2D](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce1_2D.PNG),  ![Pièce en 3D](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce1_3D.PNG)
+## Pièce 2 : ![Pièce 2 en 2D](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce2_2D3.PNG)),  ![Pièce 2 en 3D]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce2_3D.PNG))
+## Pièce 3 : ![Pièce 3 en 2D](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce3_2D1.PNG),  ![Pièce 3 en 3D](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce3_3D.PNG)
+## Pièce 4 : ![Pièce 4 en 2D](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce4_2D2.PNG),  ![Pièce 4 en 3D](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Pi%C3%A8ce44_3D.PNG)
 
-## Assemblage : ![Assemblage]([kicad/schema_mpu6050.png](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Assemblage.PNG))
+## Assemblage : ![Assemblage](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/Images/Assemblage.PNG)
 
 
 Fichiers sources SolidWorks 2025 :
   - Pièces individuelles
-     [📥 Télécharger le schéma KiCad](kicad/schéma_gyro.kicad_sch) (`*.sldprt`)
-     [📥 Télécharger le schéma KiCad](kicad/schéma_gyro.kicad_sch)
-    [📥 Télécharger le schéma KiCad](kicad/schéma_gyro.kicad_sch)
-    [📥 Télécharger le schéma KiCad](kicad/schéma_gyro.kicad_sch)
+     [Pièce 1][(Test1/Images/)](https://github.com/ucaotech-trc/TRC25-UCAOTECH/blob/main/Mecanique/Test1/SolidWorks/Pi%C3%A8ce2.SLDPRT) 
+     [Pièce 2](kicad/schéma_gyro.kicad_sch)
+    [Pièce 3](kicad/schéma_gyro.kicad_sch)
+    [Pièce 4](kicad/schéma_gyro.kicad_sch)
   - Assemblage complet (`*.sldasm`)
-    [📥 Télécharger le schéma KiCad](kicad/schéma_gyro.kicad_sch)
+    [Assamblage](kicad/schéma_gyro.kicad_sch)
 
 
 > Ces éléments visuels facilitent la lecture technique du projet et servent de preuve de modélisation dans le cadre du TRC2K25.
