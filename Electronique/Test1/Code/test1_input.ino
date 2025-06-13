@@ -1,55 +1,49 @@
-// Test 1 - GY-521 (MPU6050) avec LCD et Arduino UNO
+#include <Wire.h>                    // Bibliothèque pour communication I2C
+#include <Adafruit_MPU6050.h>       // Bibliothèque pour le capteur MPU6050
+#include <Adafruit_Sensor.h>        // Bibliothèque capteurs génériques Adafruit
+#include <LiquidCrystal_I2C.h>      // Bibliothèque pour écran LCD I2C
 
-#include <Wire.h>                    // Bibliothèque I2C
-#include <Adafruit_MPU6050.h>       // Contrôle du capteur MPU6050
-#include <Adafruit_Sensor.h>        // Structures capteur génériques
-#include <LiquidCrystal_I2C.h>      // Contrôle de l'écran LCD I2C
+// --- Déclaration des objets capteurs et affichage ---
+Adafruit_MPU6050 mpu;                      // Objet MPU6050
+LiquidCrystal_I2C lcd(0x27, 16, 2);        // LCD à l'adresse I2C 0x27, 16 colonnes, 2 lignes
 
-// Déclaration des objets
-
-Adafruit_MPU6050 mpu;
-LiquidCrystal_I2C lcd(0x27, 16, 2); // Adresse I2C
-
-// Variables capteur
-
-float ax, ay, az;                  // Accélérations lues à chaque boucle
-float ax_offset = 0, ay_offset = 0, az_offset = 0;  // Offsets pour la calibration
+// --- Variables pour les mesures d'accélération ---
+float ax, ay, az;                          // Accélérations mesurées
+float ax_offset = 0, ay_offset = 0, az_offset = 0;  // Offsets pour calibration
 
 void setup() {
-  // Initialisation communication série et I2C
-  Serial.begin(115200);
-  Wire.begin();
-  // Initialisation du capteur MPU6050
+  Serial.begin(115200);        // Initialisation de la communication série
+  Wire.begin();                // Démarre le bus I2C
+
+  // --- Initialisation du MPU6050 ---
   if (!mpu.begin()) {
     Serial.println("Erreur : capteur MPU6050 non détecté !");
-    while (1); // Stop si capteur absent
+    while (1);  // Boucle bloquante si le capteur est absent
   }
-  // Initialisation de l'écran LCD
- 
-  lcd.init();           // Démarrage
-  lcd.backlight();      // Active le rétroéclairage
-  lcd.setCursor(0, 0);
+
+  // --- Initialisation de l'écran LCD ---
+  lcd.begin();              // Démarre l'écran LCD
+  lcd.backlight();          // Active le rétroéclairage
+  lcd.setCursor(0, 0);      // Positionne le curseur
   lcd.print("Calibration..."); 
-  delay(2000);          // Pause pour stabilité avant la lecture
+  delay(2000);              // Pause pour laisser le temps au système de se stabiliser
 
-  // Phase de calibration (offset initial)
-
+  // --- Calibration du capteur ---
   float temp_x = 0, temp_y = 0, temp_z = 0;
   sensors_event_t a, g, temp;
 
-  for (int i = 0; i < 50; i++) {   // Moyenne sur 50 mesures
+  for (int i = 0; i < 100; i++) {   // Moyenne sur 100 lectures
     mpu.getEvent(&a, &g, &temp);
     temp_x += a.acceleration.x;
     temp_y += a.acceleration.y;
     temp_z += a.acceleration.z;
     delay(10);
   }
+  ax_offset = temp_x / 100;    // Calcul des offsets
+  ay_offset = temp_y / 100;
+  az_offset = temp_z / 100;
 
-  ax_offset = temp_x / 50;   // Offsets enregistrés comme référence initiale
-  ay_offset = temp_y / 50;
-  az_offset = temp_z / 50;
-
-  // Message "Prêt !"
+  // --- Message de fin de calibration ---
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Pret !");
@@ -57,51 +51,44 @@ void setup() {
 }
 
 void loop() {
-  // Lecture des données
-
+  // --- Lecture des données du capteur ---
   sensors_event_t a, g, temp;
   mpu.getEvent(&a, &g, &temp);
 
-  // Compensation des offsets (accélération relative)
-  ax = a.acceleration.x - ax_offset;
-  ay = a.acceleration.y - ay_offset;
-  az = a.acceleration.z - az_offset;
+  ax = a.acceleration.x;
+  ay = a.acceleration.y;
+  az = a.acceleration.z;
 
-  // Détection de direction dominante
- 
+  // --- Détection de la direction dominante ---
   String direction = "IMMOBILE";
-  float seuil = 1.5; // m/s² – seuil minimum pour ignorer micro-mouvements
 
-  if (abs(ax) > abs(ay) && abs(ax) > abs(az) && abs(ax) > seuil) {
-    direction = (ax > 0) ? "DROITE" : "GAUCHE";
+  if (ax > 0 && ay < 0 && az < 0) {
+    direction = "Gauche";
+  } else if (ax > 0 && ay > 4 && az < 0) {
+    direction = "Droite";
+  } else if (ax > 0 && ay > 0 && az > 0) {
+    direction = "Devant";
+  } else if (ax > 0 && ay >= 0 && ay < 4 && az < -4) {
+    direction = "Derrière";
   }
-  else if (abs(ay) > abs(ax) && abs(ay) > abs(az) && abs(ay) > seuil) {
-    direction = (ay > 0) ? "AVANT" : "ARRIERE";
-  }
-  else if (abs(az) > abs(ax) && abs(az) > abs(ay) && abs(az) > seuil) {
-    direction = (az > 0) ? "HAUT" : "BAS";
-  }
 
-  // Calcul de l'accélération dominante
+  // --- Calcul de la norme du vecteur accélération ---
+  float accTotal = sqrt(ax * ax + ay * ay + az * az);
 
-  float acc_value = max(max(abs(ax), abs(ay)), abs(az));
-
-  // Affichage LCD
- 
+  // --- Affichage sur le LCD ---
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("Dir: " + direction);
+  lcd.print("Dir: " + direction);  // Direction détectée
   lcd.setCursor(0, 1);
   lcd.print("Acc: ");
-  lcd.print(acc_value, 2);
+  lcd.print(accTotal, 2);          // Accélération totale en m/s²
   lcd.print(" m/s2");
 
-  // Sortie série (debug/calibration avancée)
-
+  // --- Affichage des données sur le moniteur série ---
   Serial.print("ax: "); Serial.print(ax, 2);
   Serial.print(" | ay: "); Serial.print(ay, 2);
   Serial.print(" | az: "); Serial.print(az, 2);
   Serial.print(" | Dir: "); Serial.println(direction);
 
-  delay(300); // Anti-clignotement / filtrage
+  delay(3000);  // Pause entre deux mesures
 }
